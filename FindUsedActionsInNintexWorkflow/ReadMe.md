@@ -14,6 +14,8 @@ Nintex 方面为我们提供了一个脚本可以支持这个功能，具体网�
 
 我在我自己的nintex 10 环境中测试这个脚本是时发现该脚本在New-WebServiceProxy时会throw 异常（只有Nintex 10环境才有这个问题，Nintex 13环境可以正常New出），导致该脚本不可用，研究半天没看出来问题原因，没有办法只好修改了脚本，不再通过WebService获取Nintex Workflow的definition xml，而是使用nwadmin.exe的ExportWorkflow 命令将definition xml先export到磁盘中，再读进内存的方式，具体脚本如下：
 
+[link](/Nintex10 AllWorkflows  Result.png)
+
 [Nintex10 AllWorkflows .ps1](Nintex10 AllWorkflows .ps1)
 
 由于该脚本使用了nwadmin.exe，因此需要将该脚本放在与nwadmin.exe相同的路径下（C:\Program Files\Nintex\Nintex Workflow 2010）
